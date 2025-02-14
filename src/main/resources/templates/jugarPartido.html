@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugar Partido</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<h1>Selecciona los Equipos</h1>
+<form action="/procesarPartido" method="post">
+    <label for="equipo1">Equipo Local:</label>
+    <select id="equipo1" name="equipo1" required>
+        <th:block th:each="equipo : ${equipos}">
+            <option th:value="${equipo.nombre}" th:text="${equipo.nombre}"></option>
+        </th:block>
+    </select>
+    <label for="equipo2">Equipo Visitante:</label>
+    <select id="equipo2" name="equipo2" required>
+        <th:block th:each="equipo : ${equipos}">
+            <option th:value="${equipo.nombre}" th:text="${equipo.nombre}"></option>
+        </th:block>
+    </select>
+    <button type="submit">Jugar</button>
+</form>
+<a href="/">Volver al Inicio</a>
+</body>
+</html>

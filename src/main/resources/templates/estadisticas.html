@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas de Equipos</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Estadísticas de Equipos</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Partidos Jugados</th>
+            <th>Partidos Ganados</th>
+            <th>Partidos Perdidos</th>
+            <th>Goles a Favor</th>
+            <th>Goles en Contra</th>
+            <th>Diferencia de Goles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <th:block th:each="equipo : ${equipos}">
+            <tr>
+                <td th:text="${equipo.nombre}"></td>
+                <td th:text="${equipo.partidosJugados}"></td>
+                <td th:text="${equipo.partidosGanados}"></td>
+                <td th:text="${equipo.partidosPerdidos}"></td>
+                <td th:text="${equipo.golesAFavor}"></td>
+                <td th:text="${equipo.golesEnContra}"></td>
+                <td th:text="${equipo.diferenciaDeGoles}"></td>
+            </tr>
+        </th:block>
+    </tbody>
+</table>
+<a href="/">Volver al Inicio</a>
+</body>
+</html>
