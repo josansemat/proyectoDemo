@@ -15,7 +15,7 @@ public class HolaController {
     @GetMapping("/hola")
     public String saludar() {
         Persona persona = personaService.obtenerPersonaPorNombre("Pepe");
-        return "Hola " + (persona != null ? persona.getNombre() : "Desconocido");
+        return "Hola " + (persona);
         //pepe
     }
 }
